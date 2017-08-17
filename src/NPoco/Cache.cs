@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
-#if NET45 || NET40
+#if NET461 || NET40
 using System.Runtime.Caching;
 #elif DNXCORE50
 using Microsoft.Extensions.Caching.Memory;

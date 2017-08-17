@@ -856,6 +856,13 @@ namespace NPoco
             return Query<T>(sql).ToList();
         }
 
+#if !(NET35 || NET40)
+        public List<T> Fetch<T>(FormattableString sql)
+        {
+            return Fetch<T>(FormattableStringHelper.Build(sql));
+        }
+#endif
+
         public List<T> Fetch<T>()
         {
             return Fetch<T>("");
